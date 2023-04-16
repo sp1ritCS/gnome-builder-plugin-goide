@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: set ft=xml ts=2 sw=2 noet: -->
+<interface>
+	<menu id="project-tree-menu">
+		<section id="project-tree-menu-new-section">
+			<item>
+				<attribute name="id">project-tree-menu-new_gobject_class</attribute>
+				<attribute name="label" translatable="yes">New _Class…</attribute>
+				<attribute name="action">goide.new_class</attribute>
+			</item>
+		</section>
+	</menu>
+</interface>

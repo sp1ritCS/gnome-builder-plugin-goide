@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: set ft=xml ts=2 sw=2 noet: -->
+<interface>
+	<template class="GObjectIdeExtNewClassDiag" parent="AdwWindow">
+		<property name="content">
+			<object class="GtkBox">
+				<property name="orientation">vertical</property>
+				<child>
+					<object class="AdwHeaderBar">
+						<property name="decoration-layout">close</property>
+						<property name="show-start-title-buttons">true</property>
+						<property name="show-end-title-buttons">false</property>
+						<property name="title-widget">
+							<object class="AdwWindowTitle">
+								<property name="title">Create new class</property>
+								<property name="subtitle">GObject IDE Extensions</property>
+							</object>
+						</property>
+						<child type="end">
+							<object class="GtkButton" id="create_btn">
+								<property name="label" translatable="yes">Create</property>
+								<signal name="clicked" handler="create_btn_clicked_cb" swapped="no" />
+								<style>
+									<class name="suggested-action" />
+								</style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwClamp">
+						<property name="child">
+							<object class="GtkListBox">
+								<property name="valign">center</property>
+								<property name="vexpand">true</property>
+								<property name="margin-start">8</property>
+								<property name="margin-end">8</property>
+								<property name="margin-top">12</property>
+								<property name="margin-bottom">12</property>
+								<child>
+									<object class="AdwEntryRow" id="class_name_inp">
+										<property name="title">Class name</property>
+										<property name="activates-default">true</property>
+										<property name="receives-default">true</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkListBoxRow">
+										<property name="selectable">false</property>
+										<property name="child">
+											<object class="GtkBox">
+												<property name="orientation">vertical</property>
+												<child>
+													<object class="GtkLabel">
+														<property name="label">Available Templates</property>
+														<property name="xalign">0.0</property>
+														<property name="margin-top">4</property>
+														<property name="margin-start">12</property>
+														<property name="margin-bottom">2</property>
+														<style>
+															<class name="heading" />
+															<class name="dim-label" />
+														</style>
+													</object>
+												</child>
+												<child>
+													<object class="GtkListView" id="templates">
+														<property name="factory">
+															<object class="GtkBuilderListItemFactory">
+																<property name="resource">/plugins/goide/gtk/factory_class_template.ui</property>
+															</object>
+														</property>
+													</object>
+												</child>
+											</object>
+										</property>
+									</object>
+								</child>
+								<style>
+									<class name="boxed-list" />
+								</style>
+							</object>
+						</property>
+					</object>
+				</child>
+			</object>
+		</property>
+	</template>
+</interface>

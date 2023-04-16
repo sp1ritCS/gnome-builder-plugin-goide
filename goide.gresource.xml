@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: set ts=2 sw=2 noet: -->
+<gresources>
+	<gresource prefix="/plugins/goide">
+		<file preprocess="xml-stripblanks" compressed="true">gtk/menus.ui</file>
+		<file preprocess="xml-stripblanks" compressed="true">gtk/new_class.ui</file>
+		<file preprocess="xml-stripblanks" compressed="true">gtk/factory_class_template.ui</file>
+	</gresource>
+</gresources>

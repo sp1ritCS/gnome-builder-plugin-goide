@@ -13,6 +13,7 @@ class GObjectIdeExtNewClassDiag(Adw.Window):
     create_btn = Gtk.Template.Child()
     class_name_inp = Gtk.Template.Child()
     templates = Gtk.Template.Child()
+    parent_class_inp = Gtk.Template.Child()
 
     def got_template_written_cb(self, src, res):
         self.set_sensitive(True)
@@ -29,7 +30,10 @@ class GObjectIdeExtNewClassDiag(Adw.Window):
     @Gtk.Template.Callback()
     def create_btn_clicked_cb(self, *args):
         selected_template = self.templates_list.get_string(self.selection_model.get_selected())
-        subproc = Gio.Subprocess.new(["got", "--output", self.output_dir, selected_template, self.class_name_inp.get_text()], Gio.SubprocessFlags.NONE)
+        parent_class = self.parent_class_inp.get_text()
+        if (not parent_class.strip()):
+            parent_class = "GObject"
+        subproc = Gio.Subprocess.new(["got", "--output", self.output_dir, selected_template, self.class_name_inp.get_text(), parent_class], Gio.SubprocessFlags.NONE)
         subproc.wait_check_async(None, self.got_template_written_cb)
         self.set_sensitive(False)
 

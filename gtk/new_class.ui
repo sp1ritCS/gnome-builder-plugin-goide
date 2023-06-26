@@ -76,6 +76,12 @@
 										</property>
 									</object>
 								</child>
+								<child>
+									<object class="AdwEntryRow" id="parent_class_inp">
+										<property name="title">Parent class</property>
+										<property name="text">GObject</property>
+									</object>
+								</child>
 								<style>
 									<class name="boxed-list" />
 								</style>

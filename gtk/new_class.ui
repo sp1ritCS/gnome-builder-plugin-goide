@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: set ft=xml ts=2 sw=2 noet: -->
 <interface>
-	<template class="GObjectIdeExtNewClassDiag" parent="AdwWindow">
+	<template class="GoideNewClassDiag" parent="AdwWindow">
 		<property name="content">
 			<object class="GtkBox">
 				<property name="orientation">vertical</property>
@@ -19,7 +19,6 @@
 						<child type="end">
 							<object class="GtkButton" id="create_btn">
 								<property name="label" translatable="yes">Create</property>
-								<signal name="clicked" handler="create_btn_clicked_cb" swapped="no" />
 								<style>
 									<class name="suggested-action" />
 								</style>

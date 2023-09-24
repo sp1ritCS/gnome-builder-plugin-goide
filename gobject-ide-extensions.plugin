@@ -1,7 +1,7 @@
 [Plugin]
 Name=GObject IDE Extensions
-Loader=python3
+Loader=C
 Module=goide
 Author=Florian "sp1rit"
-X-Builder-ABI=44
+X-Builder-ABI=45
 X-Has-Resources=true

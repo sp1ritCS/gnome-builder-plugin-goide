@@ -55,6 +55,11 @@ static void goide_tree_addin_load(IdeTreeAddin* addin, IdeTree* tree) {
 	gtk_widget_insert_action_group(GTK_WIDGET(self->tree), "goide", G_ACTION_GROUP(actions));
 }
 
+static void goide_tree_addin_unload(IdeTreeAddin*, IdeTree* tree) {
+	gtk_widget_insert_action_group(GTK_WIDGET(tree), "goide", NULL);
+}
+
 static void goide_tree_addin_addin_init(IdeTreeAddinInterface* iface) {
 	iface->load = goide_tree_addin_load;
+	iface->unload = goide_tree_addin_unload;
 }
